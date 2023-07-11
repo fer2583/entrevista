@@ -1,28 +1,30 @@
-Instrucciones para levantar el proyecto
-Clona el repositorio Git en tu máquina local ejecutando el siguiente comando en la terminal:
+Instrucciones para la App
 
-git clone <URL del repositorio> o descarga el archivo ZIP del codigo.
+Requisito: tener instalado PostgreSQL.
 
-Accede al directorio del proyecto clonado:
+1. Crear una base de datos llamada entrevista.
 
-cd <entrevista>
+Con el cmd ejecutar lo siguiente:
 
-Instala las dependencias del proyecto ejecutando el siguiente comando:
+	pg_restore --dbname=entrevista --username=mi_usuario --verbose C:\ruta\al\backUp_entrevista.backup
 
-npm install
+	reemplazando el username con su username si tienen uno, y sino posgres.
+	en verbose la ruta hacia el backup.
 
-Esto instalará todas las dependencias necesarias definidas en el archivo package.json.
+En caso de devolver que no existe o no está instalado postgreSQL usar la ubicación del .exe de pg_restore siendo por defecto:
+	
+	"C:\Program Files\PostgreSQL\{versión}\bin\pg_restore.exe"
 
-iniciar el servidor backend:
+el comando quedaria :
 
-En consola acceder a al fichero backend e inicializar el proyecto.
-entrevista/backend => npm start
+	"C:\Program Files\PostgreSQL\{versión}\bin\pg_restore.exe" --dbname=entrevista --username=mi_usuario --verbose C:\ruta\al\backUp_entrevista.backup
 
-Esto iniciará el servidor backend en la dirección http://localhost:3000.
+2. Luego en en el fichero backend, archivo "configuracionDB.js" reemplazar los datos por los que correspondan:
+ 
+	Siendo username por defecto: postgres
+	y password la que se haya utilizado a la hora de instalar postgreSQL. (por defecto: postgres)
 
-Del mismo modo con el frontend, acceder a su fichero e inicializarlo.
-entrevista/frontend => npm start
+3. En consola dentro del fichero backend ejecutar el comando npm install, seguido de este comando ejecutar npm start para correr el servidor.
 
-Esto iniciará la aplicación frontend en la dirección http://localhost:3001.
-
-Abre un navegador web y visita http://localhost:3001 para ver la aplicación en funcionamiento.
+4. Por ultimo en consola dentro del fichero frontend correr el comando npm install, seguido de este ejecutar el comando npm start para desplegar la App.
+	(en caso de que al ejecutar el fron diga que el puerto está en uso y querer abrirlo en otro puerto, decir que si (y) )
