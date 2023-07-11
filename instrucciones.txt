@@ -1,0 +1,28 @@
+Instrucciones para levantar el proyecto
+Clona el repositorio Git en tu máquina local ejecutando el siguiente comando en la terminal:
+
+git clone <URL del repositorio> o descarga el archivo ZIP del codigo.
+
+Accede al directorio del proyecto clonado:
+
+cd <entrevista>
+
+Instala las dependencias del proyecto ejecutando el siguiente comando:
+
+npm install
+
+Esto instalará todas las dependencias necesarias definidas en el archivo package.json.
+
+iniciar el servidor backend:
+
+En consola acceder a al fichero backend e inicializar el proyecto.
+entrevista/backend => npm start
+
+Esto iniciará el servidor backend en la dirección http://localhost:3000.
+
+Del mismo modo con el frontend, acceder a su fichero e inicializarlo.
+entrevista/frontend => npm start
+
+Esto iniciará la aplicación frontend en la dirección http://localhost:3001.
+
+Abre un navegador web y visita http://localhost:3001 para ver la aplicación en funcionamiento.
